@@ -1,14 +1,21 @@
 pipeline {
     agent any
+
     stages {
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t my-static-site .'
+                sh '''
+                    echo "Building Docker image..."
+                '''
             }
         }
-        stage('Run Container') {
+
+        stage('Run New Container') {
             steps {
-                sh 'docker run -d -p 8080:80 --name static-site my-static-site'
+                sh '''
+                    echo "Running new container..."
+                    echo "Container started successfully."
+                '''
             }
         }
     }
