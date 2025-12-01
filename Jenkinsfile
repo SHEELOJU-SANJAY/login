@@ -4,17 +4,17 @@ pipeline {
     stages {
         stage('Build Docker Image') {
             steps {
-                sh '''
-                    echo "Building Docker image..."
+                bat '''
+                    echo Building Docker image...
                 '''
             }
         }
 
         stage('Run New Container') {
             steps {
-                sh '''
-                    echo "Running new container..."
-                    echo "Container started successfully."
+                bat '''
+                    echo Running new container...
+                    echo Container started successfully.
                 '''
             }
         }
